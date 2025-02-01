@@ -1,0 +1,169 @@
+:root {
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+    --White: #ffffff;
+}
+
+body {
+    font-family: "Manrope", serif;
+    background: var(--LightGrayishBlue);
+}
+
+main {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.card {
+    display: flex;
+    max-width: 820px;
+    background: var(--White);
+    border-radius: 20px;
+    overflow: visible;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+}
+
+.image img {
+    width: 350px; 
+    height: 350px; 
+    object-fit: cover;
+    object-position: left;
+}
+
+.content {
+    display: flex;
+    padding: 1em 2.8em;
+    gap: 20px;
+    flex-direction: column;
+}
+
+h1 { 
+    font-size: 1.35em;
+    line-height: 1.5;
+    color: var(--VeryDarkGrayishBlue);
+}
+
+.description p {
+    font-size: 0.9em;
+    line-height: 1.7;
+    color: var(--DesaturatedDarkBlue);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+}
+
+.person p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--VeryDarkGrayishBlue);
+}
+
+span {
+    font-size: 0.9em;
+    color: var(--DesaturatedDarkBlue);
+}
+
+.share-container {
+    position: relative;
+    margin-left: auto;
+}
+
+#share_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;    
+    height: 40px;
+    cursor: pointer;
+    background: var(--LightGrayishBlue);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#share_icon img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    margin: auto;
+}
+
+#share_icon.active {
+    background: var(--VeryDarkGrayishBlue);
+}
+
+#share_icon.active img {
+    filter: brightness(0) invert(1);
+}
+
+.share {
+    position: absolute;
+    bottom: 70px;
+    right: -105px;
+    background-color: var(--VeryDarkGrayishBlue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2em 1.2em;
+    border-radius: 10px;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 100;
+}
+
+.share img {
+    border-radius: 0; 
+}
+
+
+.share.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.share::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--VeryDarkGrayishBlue);
+}
+
+.share p {
+    text-transform: uppercase;
+    color: var(--GrayishBlue);
+    font-size: 0.9em;
+    margin-right: 10px;
+    letter-spacing: 5px;
+    margin-left: 10px;
+}
+
+.share img {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
